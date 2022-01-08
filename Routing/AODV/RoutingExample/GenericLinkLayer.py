@@ -21,7 +21,7 @@ class LinkLayer(ComponentModel):
     pass
 
   def on_message_from_top(self, eventobj: Event):
-    print("On MSFRT LinkLayer {self.componentname}.{self.componentinstancenumber}")
+    print(f"On MSFRT LinkLayer {self.componentname}.{self.componentinstancenumber}")
     abovehdr = eventobj.eventcontent.header
     if abovehdr.messageto == MessageDestinationIdentifiers.NETWORKLAYERBROADCAST:
       print("It broadcasts")
@@ -38,7 +38,7 @@ class LinkLayer(ComponentModel):
     self.send_down(Event(self, EventTypes.MFRT, msg))
 
   def on_message_from_bottom(self, eventobj: Event):
-    print("On MSFRB LinkLayer {self.componentname}.{self.componentinstancenumber}")
+    print(f"On MSFRB LinkLayer {self.componentname}.{self.componentinstancenumber}")
     msg = eventobj.eventcontent
     hdr = msg.header
     payload = msg.payload

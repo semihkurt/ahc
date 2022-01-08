@@ -132,7 +132,7 @@ def main():
     # G.add_edges_from([(1, 2)])
     # nx.draw(G, with_labels=True, font_weight='bold')
     # plt.draw()
-    G = nx.random_geometric_graph(19, 0.5)
+    G = nx.random_geometric_graph(4, 0.5)
     nx.draw(G, with_labels=True, font_weight='bold')
     plt.draw()
 
